@@ -9,10 +9,7 @@
 getFunc <- function() {
 
           myJavaClass <- .jnew("functions/MainTestCPTPlus2")
-          out <- J(myJavaClass, "getStats")
-          # out <- .jcall(myJavaClass, "Ljava/lang/Object;", "getStats")
-          # Error in .jcall(myJavaClass, "Ljava/lang/Object;", "getStats") :
-          # method getStats with signature ()Ljava/lang/Object; not found
+          out <- .jcall(myJavaClass,"Ljava/util/List;","getStats", .jarray(""))
           return(out)
 }
 
